@@ -1,0 +1,363 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spark HappYness | Candles, Soaps & Celebration Mementos</title>
+  <meta name="description" content="Spark HappYness creates heartfelt candles, soaps, and celebration mementos—personal, meaningful, and filled with love." />
+
+  <style>
+    :root{
+      --bg:#fff7f3;
+      --card:#ffffff;
+      --ink:#2a1f1b;
+      --muted:#6b5a52;
+      --brand:#ff6b6b;
+      --brand2:#ffb703;
+      --line:rgba(42,31,27,.12);
+      --shadow: 0 14px 35px rgba(0,0,0,.10);
+      --radius: 18px;
+      --max: 1120px;
+      font-synthesis-weight: none;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(255,183,3,.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(255,107,107,.20), transparent 60%),
+                  var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px;}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 16px; border:1px solid var(--line);
+      background:rgba(255,255,255,.65); backdrop-filter: blur(10px);
+      border-radius:999px; position:sticky; top:14px; z-index:20;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
+    }
+    .mark{
+      width:36px; height:36px; border-radius:999px;
+      background: conic-gradient(from 220deg, var(--brand), var(--brand2), var(--brand));
+      box-shadow: 0 8px 18px rgba(255,107,107,.25);
+    }
+    .navlinks{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end; font-weight:600;}
+    .pill{
+      padding:10px 14px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+    }
+    .pill:hover{transform:translateY(-1px); transition:.15s ease; box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .hero{
+      margin-top:26px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:20px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} .nav{border-radius:18px} }
+    .panel{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.75);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:26px;
+    }
+    h1{font-size: clamp(30px, 4vw, 52px); line-height:1.06; margin:0 0 12px;}
+    .tagline{font-size: clamp(15px, 1.6vw, 18px); color:var(--muted); margin:0 0 18px;}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 16px; border-radius:999px;
+      border:1px solid var(--line); background:#fff;
+      font-weight:700;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: transparent; color:#1a120f;
+    }
+    .btn:hover{transform: translateY(-1px); transition:.15s ease; box-shadow:0 12px 26px rgba(0,0,0,.10)}
+    .mini{
+      display:grid; gap:12px;
+    }
+    .stat{
+      border:1px solid var(--line); border-radius: var(--radius);
+      padding:14px 16px; background: rgba(255,255,255,.8);
+    }
+    .stat b{display:block; font-size:16px}
+    .stat span{color:var(--muted); font-size:14px}
+    .section{
+      margin-top:26px;
+    }
+    .section h2{margin:0 0 12px; font-size:24px}
+    .section p{margin:0 0 14px; color:var(--muted)}
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.80);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    }
+    .img{
+      height:170px;
+      background:
+        radial-gradient(140px 80px at 35% 25%, rgba(255,183,3,.35), transparent 70%),
+        radial-gradient(160px 90px at 75% 35%, rgba(255,107,107,.25), transparent 70%),
+        linear-gradient(135deg, rgba(42,31,27,.10), rgba(42,31,27,.02));
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(42,31,27,.65);
+      font-weight:800; letter-spacing:.4px;
+    }
+    .content{padding:14px 14px 16px}
+    .content h3{margin:0 0 6px; font-size:16px}
+    .content p{margin:0; color:var(--muted); font-size:14px}
+    .badge{
+      display:inline-block; margin-top:10px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line); background:#fff; font-size:12px; font-weight:700;
+    }
+    .twoCol{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    @media (max-width:900px){ .twoCol{grid-template-columns:1fr} }
+    footer{
+      margin-top:26px; color:var(--muted); font-size:13px;
+      text-align:center;
+    }
+    .small{font-size:13px; color:var(--muted)}
+    .list{margin:0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="logo">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:15px; line-height:1;">Spark HappYness</div>
+          <div class="small" style="line-height:1.2;">Candles • Soaps • Mementos</div>
+        </div>
+      </div>
+      <nav class="navlinks">
+        <a class="pill" href="#products">Products</a>
+        <a class="pill" href="#custom">Custom Orders</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="panel">
+          <h1>Warmth, Joy &<br/>Unforgettable Memories</h1>
+          <p class="tagline">
+            At <b>Spark HappYness</b>, our mission is to bring warmth, joy, and unforgettable memories to every celebration we touch.
+            We are passionate about creating heartfelt experiences and mementos where every detail feels personal, meaningful, and filled with love.
+            Our goal is to be the helping hand that turns your special moments into stories you'll cherish forever.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#products">Browse Products →</a>
+            <a class="btn" href="#custom">Request a Custom Set</a>
+          </div>
+
+          <p class="small" style="margin-top:14px;">
+            ✨ Handmade with care • Perfect for weddings, birthdays, baptisms, baby showers, corporate giveaways & more.
+          </p>
+        </div>
+
+        <aside class="panel mini">
+          <div class="stat">
+            <b>Signature Candles</b>
+            <span>Scents that set the mood—soft, sweet, and celebration-ready.</span>
+          </div>
+          <div class="stat">
+            <b>Gentle Soaps</b>
+            <span>Thoughtful favors that feel personal and pampering.</span>
+          </div>
+          <div class="stat">
+            <b>Meaningful Mementos</b>
+            <span>Little keepsakes guests love and remember.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="products" class="section panel">
+        <h2>Products</h2>
+        <p>Explore our best-loved items. Replace the placeholders with your product photos anytime.</p>
+
+        <h3 style="margin:18px 0 10px;">Candles</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="img">CANDLE PHOTO</div>
+            <div class="content">
+              <h3>Classic Jar Candle</h3>
+              <p>Clean, cozy glow—perfect as a heartfelt gift or event favor.</p>
+              <span class="badge">Candles</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">CANDLE PHOTO</div>
+            <div class="content">
+              <h3>Mini Favor Candle</h3>
+              <p>Guest-ready sizes with custom labels for your celebration.</p>
+              <span class="badge">Candles</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">CANDLE PHOTO</div>
+            <div class="content">
+              <h3>Special Scent Edition</h3>
+              <p>Create your theme with scents that match your story.</p>
+              <span class="badge">Candles</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin:22px 0 10px;">Soaps</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="img">SOAP PHOTO</div>
+            <div class="content">
+              <h3>Gentle Bar Soap</h3>
+              <p>Soft on skin, beautiful on display—ideal for giveaways.</p>
+              <span class="badge">Soaps</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">SOAP PHOTO</div>
+            <div class="content">
+              <h3>Mini Soap Favors</h3>
+              <p>Perfectly portioned with ribbons, tags, or labels.</p>
+              <span class="badge">Soaps</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">SOAP PHOTO</div>
+            <div class="content">
+              <h3>Theme Set Soap Pack</h3>
+              <p>Mix colors and scents to match your motif.</p>
+              <span class="badge">Soaps</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin:22px 0 10px;">Mementos</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="img">MEMENTO PHOTO</div>
+            <div class="content">
+              <h3>Personalized Keepsake</h3>
+              <p>Small details, big feelings—made for your special day.</p>
+              <span class="badge">Mementos</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">MEMENTO PHOTO</div>
+            <div class="content">
+              <h3>Thank-You Tokens</h3>
+              <p>Sweet add-ons guests can take home and treasure.</p>
+              <span class="badge">Mementos</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">MEMENTO PHOTO</div>
+            <div class="content">
+              <h3>Event Gift Set</h3>
+              <p>Bundle candles + soaps + keepsakes for a complete favor box.</p>
+              <span class="badge">Mementos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="custom" class="section panel">
+        <h2>Custom Orders</h2>
+        <div class="twoCol">
+          <div>
+            <p>
+              Planning a wedding, birthday, baptism, baby shower, or corporate event?
+              Let’s create a set that matches your theme—colors, scents, labels, packaging, and message.
+            </p>
+            <ul class="list">
+              <li>Choose product type: candles, soaps, mementos, or bundles</li>
+              <li>Pick your theme: colors, name/date, message, packaging style</li>
+              <li>We’ll confirm your design and produce your custom favors</li>
+            </ul>
+          </div>
+          <div class="card" style="padding:16px;">
+            <h3 style="margin:0 0 8px;">Quick Request Template</h3>
+            <p class="small" style="margin:0 0 10px;">
+              Copy this into your message:
+            </p>
+            <div class="small" style="background:#fff; border:1px solid var(--line); padding:12px; border-radius:14px;">
+              Event date:<br/>
+              Theme/colors:<br/>
+              Product (candles/soaps/mementos/bundle):<br/>
+              Quantity:<br/>
+              Name/message for label:<br/>
+              Budget range (optional):
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section panel">
+        <h2>About Spark HappYness</h2>
+        <p>
+          Spark HappYness is built on thoughtful crafting and heartfelt detail—because celebrations deserve to feel personal.
+          We create items that don’t just look good on a table, but feel meaningful in the hands of the people you love.
+        </p>
+        <p class="small">
+          Tip: You can add your story here—how Spark HappYness began, what inspires your scents and designs, and what makes your work special.
+        </p>
+      </section>
+
+      <section id="contact" class="section panel">
+        <h2>Contact</h2>
+        <p>Tell us about your celebration and we’ll help you create something beautiful.</p>
+
+        <div class="twoCol">
+          <div class="card" style="padding:16px;">
+            <h3 style="margin:0 0 8px;">Message Us</h3>
+            <p class="small" style="margin:0 0 10px;">
+              Add your preferred contact details below:
+            </p>
+            <ul class="list">
+              <li>Email: <b>your@email.com</b></li>
+              <li>Instagram: <b>@sparkhappyness</b></li>
+              <li>Facebook: <b>/sparkhappyness</b></li>
+              <li>Order Form: <b>link-to-google-form</b></li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:16px;">
+            <h3 style="margin:0 0 8px;">Hours / Location</h3>
+            <p class="small" style="margin:0;">
+              Add your city and order lead time here (e.g., “Made to order • 7–14 days lead time”).
+            </p>
+            <span class="badge" style="margin-top:12px;">Made with love ✨</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Spark HappYness • Handmade candles, soaps & celebration mementos
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
