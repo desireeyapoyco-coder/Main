@@ -7,6 +7,51 @@
   <title>Spark HappYness | Candles, Soaps & Celebration Mementos</title>
   <meta name="description" content="Spark HappYness creates heartfelt candles, soaps, and celebration mementos—personal, meaningful, and filled with love." />
 
+/* === Spark HappYness Brand Tokens === */
+:root{
+  --pink: #FFE5F0;
+  --wine: #570026;
+  --ink: var(--wine);
+  --bg: var(--pink);
+  --card: rgba(255,255,255,0.80);
+  --line: rgba(87,0,38,0.16);
+}
+
+/* Load Clear Sans via CDN (fast + easiest). */
+@import url('https://fonts.cdnfonts.com/css/clear-sans'); /* Clear Sans family */ /* [4](https://www.cdnfonts.com/clear-sans.font) */
+
+html, body{
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Use Clear Sans first. Idealist Sans will be used if you later add it as a webfont file. */
+body{
+  font-family: "Clear Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Medium = 500 (Clear Sans Medium) */
+h1, h2, h3, .logo, nav a, .btn{
+  font-weight: 500; /* medium */ /* [8](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight)[9](https://www.w3schools.com/cssref/pr_font_weight.php) */
+}
+
+/* Light = 300 (Idealist Sans Light style) */
+.tagline, .small, p{
+  font-weight: 300; /* light */ /* [8](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight)[9](https://www.w3schools.com/cssref/pr_font_weight.php) */
+}
+
+nav, .panel, .card{
+  border-color: var(--line);
+}
+
+.btn.primary{
+  background: var(--wine);
+  color: #FFE5F0;
+  border-color: transparent;
+}
+``
+
   <style>
     :root{
       --bg:#fff7f3;
